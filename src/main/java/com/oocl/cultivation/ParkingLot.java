@@ -18,7 +18,7 @@ public class ParkingLot {
         return car;
     }
 
-    public boolean isTicketValid(ParkingTicket parkingTicket) {
+    boolean isTicketValid(ParkingTicket parkingTicket) {
         return parkingSpace.get(parkingTicket) != null;
     }
 }
