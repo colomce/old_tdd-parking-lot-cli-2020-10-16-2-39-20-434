@@ -20,6 +20,18 @@ public class ParkingLotTest {
     }
 
     @Test
+    void should_return_10_when_ParkingLot_is_created_given_ParkingLot() {
+        //given
+        ParkingLot parkingLot = new ParkingLot();
+
+        //when
+        int capacity = parkingLot.getCapacity();
+
+        //then
+        assertEquals(10, capacity);
+    }
+
+    @Test
     void should_return_10_when_getCapacity_given_ParkingLot_capacity_10() {
         //given
         ParkingLot parkingLot = new ParkingLot(10);
