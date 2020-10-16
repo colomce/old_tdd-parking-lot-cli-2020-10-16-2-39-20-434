@@ -13,7 +13,9 @@ public class ParkingLot {
     }
 
     Car fetch(ParkingTicket parkingTicket) {
-        return parkingSpace.get(parkingTicket);
+        Car car = parkingSpace.get(parkingTicket);
+        parkingSpace.remove(parkingTicket);
+        return car;
     }
 
     public boolean isTicketValid(ParkingTicket parkingTicket) {
