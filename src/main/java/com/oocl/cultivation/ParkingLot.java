@@ -12,7 +12,7 @@ public class ParkingLot {
         return parkingTicket;
     }
 
-    public Car fetch(ParkingTicket parkingTicket) {
+    Car fetch(ParkingTicket parkingTicket) {
         return parkingSpace.get(parkingTicket);
     }
 }
