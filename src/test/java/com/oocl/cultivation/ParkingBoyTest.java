@@ -12,8 +12,7 @@ class ParkingBoyTest {
         Car car = new Car();
 
         //when
-        ParkingTicket parkingTicket = new ParkingTicket();
-        parkingTicket = parkingBoy.park(car);
+        ParkingTicket parkingTicket = parkingBoy.park(car);
 
         //then
         assertNotNull(parkingTicket);
