@@ -15,4 +15,8 @@ public class ParkingLot {
     Car fetch(ParkingTicket parkingTicket) {
         return parkingSpace.get(parkingTicket);
     }
+
+    public boolean isTicketValid(ParkingTicket parkingTicket) {
+        return parkingSpace.get(parkingTicket) != null;
+    }
 }
