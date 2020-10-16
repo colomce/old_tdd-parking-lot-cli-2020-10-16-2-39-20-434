@@ -6,6 +6,13 @@ import java.util.Map;
 public class ParkingLot {
     private Map<ParkingTicket, Car> parkingSpace = new HashMap<>();
 
+    public ParkingLot() {
+    }
+
+    public ParkingLot(int capacity) {
+
+    }
+
     public ParkingTicket park(Car car) {
         ParkingTicket parkingTicket = new ParkingTicket();
         parkingSpace.put(parkingTicket, car);
@@ -20,5 +27,9 @@ public class ParkingLot {
 
     boolean isTicketValid(ParkingTicket parkingTicket) {
         return parkingSpace.get(parkingTicket) != null;
+    }
+
+    public int getCapacity() {
+        return 0;
     }
 }
