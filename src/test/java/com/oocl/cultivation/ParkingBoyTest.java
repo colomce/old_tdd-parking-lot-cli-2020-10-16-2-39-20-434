@@ -44,4 +44,22 @@ class ParkingBoyTest {
         //then
         assertSame(car, fetchedCar);
     }
+
+    @Test
+    void should_return_Cars_when_ParkingBoy_fetch_given_two_tickets_from_two_parked_cars() {
+        //given
+        Car firstCar = new Car();
+        Car secondCar = new Car();
+        ParkingBoy parkingBoy = new ParkingBoy(new ParkingLot());
+        ParkingTicket firstParkingTicket = parkingBoy.park(firstCar);
+        ParkingTicket secondParkingTicket = parkingBoy.park(secondCar);
+
+        //when
+        Car fetchedFirstCar = parkingBoy.fetch(firstParkingTicket);
+        Car fetchedSecondCar = parkingBoy.fetch(secondParkingTicket);
+
+        //then
+        assertSame(firstCar, fetchedFirstCar);
+        assertSame(secondCar, fetchedSecondCar);
+    }
 }
