@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class ParkingBoyTest {
 
@@ -28,5 +29,19 @@ class ParkingBoyTest {
 
         //then
         assertNotNull(parkingTicket);
+    }
+
+    @Test
+    void should_return_right_Car_when_ParkingBoy_fetch_a_car_given_ParkingTicket() {
+        //given
+        Car car = new Car();
+        ParkingBoy parkingBoy = new ParkingBoy(new ParkingLot());
+        ParkingTicket parkingTicket = parkingBoy.park(car);
+
+        //when
+        Car fetchedCar = parkingBoy.fetch(parkingTicket);
+
+        //then
+        assertSame(car, fetchedCar);
     }
 }
